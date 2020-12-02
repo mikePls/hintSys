@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainWin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: SILVER;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hintsystem.mainController">
+   <children>
+      <HBox fx:id="backgroundBox" alignment="CENTER" fillHeight="false" layoutY="-2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <HBox alignment="CENTER" fillHeight="false" layoutX="73.0" layoutY="30.0" prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="739.0" prefWidth="1270.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="95.0" layoutX="709.0" layoutY="328.0" stroke="WHITE" strokeType="INSIDE" width="417.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="208.0" layoutX="709.0" layoutY="95.0" stroke="WHITE" strokeType="INSIDE" width="417.0" />
+                  <Button fx:id="sendImage" layoutX="568.0" layoutY="533.0" mnemonicParsing="false" onAction="#imageHandle" prefHeight="41.0" prefWidth="83.0" text="Send">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <ComboBox fx:id="presetBox" layoutX="115.0" layoutY="357.0" onAction="#setPresetPreview" prefHeight="41.0" prefWidth="442.0" promptText="select preset" />
+                  <Button fx:id="sendPreset" layoutX="568.0" layoutY="356.0" mnemonicParsing="false" onAction="#presetHandle" prefHeight="41.0" prefWidth="83.0" text="Send">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <ComboBox fx:id="imageList" layoutX="113.0" layoutY="533.0" onAction="#setImagePreview" prefHeight="41.0" prefWidth="442.0" promptText="select image" />
+                  <Button fx:id="sendShout" layoutX="567.0" layoutY="174.0" mnemonicParsing="false" onAction="#shoutHandle" prefHeight="47.0" prefWidth="83.0" text="Send">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Button fx:id="ring" layoutX="287.0" layoutY="610.0" mnemonicParsing="false" onAction="#ringHandle" prefHeight="50.0" prefWidth="100.0" text="Ring" textFill="#060ef2">
+                     <effect>
+                        <DropShadow color="#044561" />
+                     </effect>
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="116.0" layoutY="332.0" prefHeight="26.0" prefWidth="116.0" text="Preset Hints:" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="113.0" layoutY="512.0" prefHeight="26.0" prefWidth="95.0" text="Image list:" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="timerLabel" alignment="CENTER" layoutX="719.0" layoutY="103.0" prefHeight="152.0" prefWidth="299.0" style="-fx-background-color: BLACK; -fx-border-color: WHITE;" text="00:00" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="105.0" />
+                     </font>
+                     <effect>
+                        <Blend mode="BLUE" />
+                     </effect>
+                  </Label>
+                  <TextArea fx:id="shoutBox" layoutX="114.0" layoutY="102.0" prefHeight="198.0" prefWidth="440.0" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow color="#00000075" />
+                     </effect>
+                  </TextArea>
+                  <HBox alignment="CENTER_LEFT" fillHeight="false" layoutX="719.0" layoutY="255.0" prefHeight="41.0" prefWidth="401.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetHandle" prefHeight="31.0" prefWidth="82.0" text="Reset">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
+                        <Label text="Background" textFill="#0bc8f7">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <ColorPicker fx:id="backgroundColour" editable="true" onAction="#backgroundColourSet" prefHeight="30.0" prefWidth="30.0" promptText="Set screen colour" />
+                        <Label text="Timer" textFill="#0bc8f7">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <ColorPicker fx:id="timeColor" editable="true" layoutX="128.0" layoutY="16.0" onAction="#timeColorSet" prefHeight="30.0" prefWidth="30.0" promptText="set time colour" />
+                        <CheckBox fx:id="timeReminder" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="20.0" prefWidth="88.0" text="Reminder" textFill="#0bc8f7">
+                           <font>
+                              <Font size="14.0" />
+                           </font></CheckBox>
+                     </children>
+                  </HBox>
+                  <Label layoutX="118.0" layoutY="79.0" text="ShoutBox:" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <FlowPane alignment="TOP_CENTER" hgap="2.0" layoutX="1024.0" layoutY="103.0" prefHeight="152.0" prefWidth="95.0" vgap="2.0">
+                     <children>
+                        <Button fx:id="startButton" contentDisplay="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#startHandle" prefHeight="30.0" prefWidth="85.0" text="Start">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pauseHandle" prefHeight="30.0" prefWidth="85.0" text="Pause">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="plusOne" mnemonicParsing="false" onAction="#plus1Handle" prefHeight="40.0" prefWidth="40.0" text="+1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="minusOne" mnemonicParsing="false" onAction="#minus1Handle" prefHeight="40.0" prefWidth="40.0" text="-1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="plus5" mnemonicParsing="false" onAction="#plus5Handle" prefHeight="40.0" prefWidth="40.0" text="+5">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="minus5" mnemonicParsing="false" onAction="#minus5Handle" prefHeight="40.0" prefWidth="40.0" text="-5">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </FlowPane>
+                  <Label layoutX="709.0" layoutY="72.0" prefHeight="18.0" prefWidth="54.0" text="Timer" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="719.0" layoutY="342.0" prefHeight="30.0" prefWidth="391.0" spacing="12.0">
+                     <children>
+                        <Button fx:id="addCounter" mnemonicParsing="false" onAction="#addCounter1Handle" prefHeight="26.0" prefWidth="83.0" text="Counter 1">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addCounter2" mnemonicParsing="false" onAction="#addCounter2Handle" prefHeight="26.0" prefWidth="83.0" text="Counter 2">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addCounter3" mnemonicParsing="false" onAction="#addCounter3Handle" prefHeight="26.0" prefWidth="83.0" text="Counter 3">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addCounter4" mnemonicParsing="false" onAction="#addCounter4Handle" prefHeight="26.0" prefWidth="83.0" text="Counter 4">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="setCounter1" layoutX="749.0" layoutY="384.0" mnemonicParsing="false" onAction="#setCount1" prefHeight="26.0" prefWidth="54.0" text="set" />
+                  <Button fx:id="setCounter2" layoutX="842.0" layoutY="385.0" mnemonicParsing="false" onAction="#setCount2" prefHeight="26.0" prefWidth="54.0" text="set" />
+                  <Button fx:id="setCounter3" layoutX="936.0" layoutY="384.0" mnemonicParsing="false" onAction="#setCount3" prefHeight="26.0" prefWidth="54.0" text="set" />
+                  <Button fx:id="setCounter4" layoutX="1030.0" layoutY="384.0" mnemonicParsing="false" onAction="#setCount4" prefHeight="26.0" prefWidth="54.0" text="set" />
+                  <Label layoutX="706.0" layoutY="433.0" prefHeight="20.0" prefWidth="100.0" text="Music theme" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="706.0" layoutY="512.0" prefHeight="10.0" prefWidth="100.0" text="Sound fx" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <FlowPane fx:id="sfxPane" focusTraversable="true" hgap="2.0" layoutX="706.0" layoutY="534.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="103.0" prefWidth="417.0" prefWrapLength="0.0" rowValignment="TOP" style="-fx-border-color: white;" vgap="2.0" />
+                  <HBox alignment="CENTER" layoutX="706.0" layoutY="455.0" prefHeight="47.0" prefWidth="417.0" spacing="5.0" style="-fx-border-color: white;">
+                     <children>
+                        <Slider fx:id="musicSlider" prefHeight="14.0" prefWidth="116.0" />
+                        <Button fx:id="themeRewind" mnemonicParsing="false" onAction="#themeRewindHandle" prefHeight="22.0" prefWidth="18.0">
+                           <graphic>
+                              <ImageView fitHeight="13.0" fitWidth="20.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@icons/rewind.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="themePlay" mnemonicParsing="false" onAction="#themePlayHandle" prefHeight="14.0" prefWidth="40.0">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@icons/play.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="themePause" mnemonicParsing="false" onAction="#themePauseHandle" prefHeight="14.0" prefWidth="28.0">
+                           <graphic>
+                              <ImageView fitHeight="13.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/pause.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="musicLabel" alignment="CENTER" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: transparent;" text="00:00" textFill="#0bc8f7">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="volumeSlider" prefHeight="14.0" prefWidth="58.0" value="50.0" />
+                     </children>
+                  </HBox>
+                  <ImageView fx:id="previewImage" fitHeight="89.0" fitWidth="140.0" layoutX="535.0" layoutY="585.0" onMouseClicked="#hideImagePreview" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="displayingHint" alignment="CENTER" layoutX="763.0" layoutY="104.0" prefHeight="40.0" prefWidth="215.0" text="***Displaying hint***" textAlignment="CENTER" textFill="#ffc800" visible="false">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label id="previewPreset" fx:id="previewPreset" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="113.0" layoutY="406.0" onMouseClicked="#hidePresetPreview" prefHeight="79.0" prefWidth="442.0" style="-fx-border-color: #0bc8f7; -fx-background-color: black;" textFill="#00bef2" visible="false" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+         </children>
+      </HBox>
+      <HBox fx:id="statusBar" alignment="CENTER_LEFT" fillHeight="false" layoutX="2.0" layoutY="-3.0" opacity="0.6" prefHeight="10.0" prefWidth="1280.0" spacing="5.0" style="-fx-background-color: grey;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Region prefHeight="18.0" prefWidth="21.0" />
+            <Label prefHeight="28.0" prefWidth="81.0" text="Status:" textFill="WHITE">
+               <padding>
+                  <Insets right="1.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets right="1.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="19.0" />
+               </font></Label>
+            <Label fx:id="timeStatus" text="Ready" textFill="#11ff00">
+               <font>
+                  <Font size="19.0" />
+               </font></Label>
+            <Region prefHeight="18.0" prefWidth="18.0" />
+            <Label text="Counters: " textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font></Label>
+            <Label fx:id="counterStatus" text="No active counters" textFill="#ffbc00">
+               <font>
+                  <Font size="19.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <ImageView fitHeight="49.0" fitWidth="90.0" layoutX="796.0" layoutY="577.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="14.0">
+         <image>
+            <Image url="@icons/logo%20final%20gold.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Counter" cache="true" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: BLACK;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hintsystem.CounterController">
+    <stylesheets>
+        <URL value="@counter.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="counterLabel" alignment="CENTER" layoutX="40.0" layoutY="66.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: BLACK;" text="00:00" textAlignment="CENTER" textFill="#fdfdfd" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="Times New Roman" size="450.0" />
+         </font>
+      </Label>
+      <Label id="HintLabel" fx:id="hintLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="36.0" layoutY="59.0" opacity="0.91" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: SKYBLUE;" textAlignment="CENTER" textFill="#13055c" visible="false" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font size="76.0" />
+         </font>
+      </Label>
+      <VBox fx:id="imageBox" alignment="CENTER" layoutX="590.0" layoutY="239.0" onMouseClicked="#clickHandle" onMouseDragged="#moveHandle" prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="imageHint" fitHeight="607.0" fitWidth="900.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@hintPhotos/sample2.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
